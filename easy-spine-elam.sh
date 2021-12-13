@@ -261,7 +261,7 @@ EOF
         touch /tmp/triggered
         echo -e "\n"
         echo "ELAM TRIGGERED on module $mod:"
-        grep "Triggered" /tmp/elam_output-mod$mod | awk '{print "ASIC: " $2 " SLICE: " $4}'
+        grep "Triggered" /tmp/elam_output-mod$mod | awk '{print "ASIC: " $2 " SLICE: " $4}' | sort -u
         if [[ -v interface ]]; then
             echo "INTERFACE: $interface"
         fi
