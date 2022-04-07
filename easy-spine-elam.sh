@@ -304,7 +304,7 @@ EOF
 
 #Takes arg LC or FC to get list of lc's or fm's.
 function get_mod_list() {
-    icurl 'http://localhost:7777/api/class/eqpt'$1'Slot.json?rsp-subtree=children&rsp-subtree-filter=eq(eqpt'$1'.rdSt,"active")&rsp-subtree-include=required' 2>/dev/null | python -m json.tool | grep physId | egrep -o "[0-9]+"
+    icurl 'http://localhost:7777/api/class/eqpt'$1'Slot.json?rsp-subtree=children&rsp-subtree-filter=eq(eqpt'$1'.operSt,"online")&rsp-subtree-include=required' 2>/dev/null | python -m json.tool | grep physId | egrep -o "[0-9]+"
 }
 
 function close_ssh_sockets() {
